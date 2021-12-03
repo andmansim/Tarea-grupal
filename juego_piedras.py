@@ -15,17 +15,26 @@ print ("Empieza jugando el jugardo 1")
 def repartir(piedras):
     if piedras >= 5:
         jugador = 5
+        piedras = piedras - 5
     elif piedras < 5 or piedras >= 3:
         jugador = 3
+        piedras = piedras - 3
     elif piedras == 2: 
         jugador = 2
+        piedras = piedras - 2
     else:
         jugador = 0
     return jugador
 
 print("Piedras del jugador 1:")
-jugador1 = repartir(piedras)
+jugador1 = repartir(piedras) 
+if jugador1 == 0:
+    print("Jugador 1 pierde")
+
 print("Piedras del jugador 2")
+jugador2 = repartir(piedras)
+if jugador2 == 0:
+    print("Jugador 1 pierde")
 
 
 while piedras >=5:
