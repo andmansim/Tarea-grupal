@@ -9,69 +9,41 @@ Siempre empezará el jugador uno.
   
 """
 import random
-piedras = random.randint(1,9)
+piedras = 1
 print(piedras)
 print ("Empieza jugando el jugardo 1")
-def repartir(piedras):
-    if piedras >= 5:
+def repartir(p):
+    if p >= 5:
         jugador = 5
-        piedras = piedras - 5
-    elif piedras < 5 or piedras >= 3:
+        
+    elif p < 5 and p >= 3:
         jugador = 3
-        piedras = piedras - 3
-    elif piedras == 2: 
+        
+    elif p == 2: 
         jugador = 2
-        piedras = piedras - 2
+        
     else:
-        jugador = 0
+        jugador = p
     return jugador
 
-print("Piedras del jugador 1:")
-jugador1 = repartir(piedras) 
-if jugador1 == 0:
-    print("Jugador 1 pierde")
-
-print("Piedras del jugador 2")
-jugador2 = repartir(piedras)
-if jugador2 == 0:
-    print("Jugador 1 pierde")
-
-
-while piedras >=5:
-    print("Jugador 1 coge 5 piedras")
-    piedras_totales = piedras - 5
-    print(piedras_totales)
-    if piedras_totales == 5:
-        print("Jugador 2 gana")
-    elif piedras_totales == 3:
-        print("Jugador 2 coge 3 piedras")
-        piedras_totales = piedras_totales - 3
-        print(piedras_totales)
-        print("Jugador 2 gana")
-    elif piedras_totales == 2:
-        print("Jugador 2 coge 2 piedras")
-        piedras_totales = piedras_totales - 2
-        print(piedras_totales)
-        print("Jugador 2 gana")
-    else:
-        print("Jugador 1 gana")
-    
-    break
-
-while piedras < 5:
-    if piedras == 4 or 3:
-        print("Jugador 1 coge 3 piedras")
-        piedras_totales = piedras - 3
-        print (piedras_totales)
-        print("Jugador 1 gana")
-    elif piedras == 2:
-        print("Jugador 1 coge 2 piedras")
-        piedras_totales = piedras - 2
-        print(piedras_totales)
-        print("Jugador 1 gana")
-    else: 
-        print("Jugador 2 gana")
-    break
-        
-
-        
+while piedras > 0:
+    print("Piedras del jugador 1:")
+    jugador1 = repartir(piedras) 
+    print(jugador1)
+    piedras = piedras - jugador1
+    if jugador1 < 2:
+        print("Jugador 1 pierde")
+        break
+    elif piedras == 0:
+        print("Jugador 2 pierde")
+        break
+    print("Piedras del jugador 2")
+    jugador2 = repartir(piedras)
+    piedras = piedras - jugador2
+    print(jugador2)
+    if jugador2 < 2:
+        print("Jugador 2 pierde")
+        break
+    elif piedras == 0:
+        print("Jugador 1 pierde")
+        break
