@@ -14,10 +14,20 @@ print(piedras)
 print ("Empieza jugando el jugardo 1")
 
 while piedras >=5:
+    print("Jugador 1 coge 5 piedras")
     piedras_totales = piedras - 5
+    print(piedras_totales)
     if piedras_totales == 5:
         print("Jugador 1 gana")
-    elif piedras_totales == 3 or 2:
+    elif piedras_totales == 3:
+        print("Jugador 2 coge 3 piedras")
+        piedras_totales = piedras_totales - 3
+        print(piedras_totales)
+        print("Jugador 2 gana")
+    elif piedras_totales == 2:
+        print("Jugador 2 coge 2 piedras")
+        piedras_totales = piedras_totales - 2
+        print(piedras_totales)
         print("Jugador 2 gana")
     else:
         print("Jugador 1 gana")
@@ -26,10 +36,14 @@ while piedras >=5:
 
 while piedras < 5:
     if piedras == 4 or 3:
+        print("Jugador 1 coge 3 piedras")
         piedras_totales = piedras - 3
+        print (piedras_totales)
         print("Jugador 1 gana")
     elif piedras == 2:
+        print("Jugador 1 coge 2 piedras")
         piedras_totales = piedras - 2
+        print(piedras_totales)
         print("Jugador 1 gana")
     else: 
         print("Jugador 2 gana")
