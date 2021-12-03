@@ -2,22 +2,22 @@
           #["", "", ""], 
           #["", "", ""]]
 
-posiciones = ((0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2))
+import random
    
-lab=[]
-def mazecreation():
-        maze = []
-        for i in range(0,3): #line
-                for j in range(0,3): #column
-                                      
-                        if tuple([i,j]) in posiciones:
-                                maze.append("X")
-                        else:
-                                maze.append(" ")
-                lab.append (maze)
-                maze = []
-mazecreation()
- 
-for x in lab:
-    print(",".join(x))
+matriz =[]
 
+def creacionmatriz(n,m):
+        fila = []
+        for i in range(n,m): #linea
+            for j in range(n,m): #columna
+                
+                a = random.randint(0,100)
+                fila.append(a)
+                
+            matriz.append (fila)
+            fila = []
+           
+creacionmatriz(0,3)
+ 
+for x in matriz:
+    print(" ".join(str(x)))
