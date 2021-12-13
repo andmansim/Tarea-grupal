@@ -8,20 +8,34 @@ laberinto = [
     ['T2', 'T1', ' ', 'T1', ' ','S']
     ]
 
+#indicación de que representa cada inicial en el tablero
 inicio = 'I'
 salida = 'S'
 bomba = 'B'
 muro = 'X'
 teletransporte_1 = 'T1'
 teletransporte_2 = 'T2'
-solucion = []
+
+#listas con las coordenadas correspondientes, necesarias para imprimir el laberinto
 muro = ((0,1), (0,2), (0,4), (0,5), (1,1), (3,3), (4,3))
 bomba = ((0,3),(2,1),(2,3))
 teletransporte_1 = ((5,1), (5,3))
 teletransporte_2 = ((5,0), (2,4)) 
 inicio = ((0,0))
 salida = ((5,5))
+
+#listas vacias que se usan en distntas funciones
+solucion = []
 lab =[]
+
+#listas de probabilidades necesarias para calcular la probabilidad en la funcion 'probabilidad'
+prob_tres_cuartos = [(3, 1), (1, 4), (2, 4), (3, 4), (4, 4), (3, 2), (4, 2)]
+prob_dos_tercios = [(1, 0), (2, 0), (1, 5), (2, 5), (5, 3)]
+prob_uno = [(3, 0), (4, 0), (5, 0), (5, 1), (4, 1), (5, 4), (5, 2), (3, 5), (4, 5), (5, 5)]
+prob_un_medio = [(0,0), (1, 2), (2, 2), (1, 3)]
+prob_muerte = [(2, 1), (0, 3), (2, 3)]
+
+#funcion que crea el laberinto
 #def creacionlab():
 #        fila = []
 #        for i in range(0,6): #line
@@ -43,7 +57,7 @@ lab =[]
                 #lab.append (fila)
                 #fila = []
 
-
+#funcion que calcula aleatoriamente el siguiente movimiento de la rana
 def calcular_siguiente(posicion_actual): 
         coordenada = [] 
         x = posicion_actual[0] 
@@ -71,6 +85,7 @@ def calcular_siguiente(posicion_actual):
                         coordenada.append(y+1) 
         return coordenada
 
+#las proximas 4 funciones indican si es posible o mover en la direccion que indican
 def arriba(x, y): 
         if x > 0 and x < 5: 
                 if laberinto[x-1][y] != "X": 
@@ -94,6 +109,22 @@ def izquierda(x, y):
                 if laberinto[x][y-1] != "X":
                         return True
         return False
+
+#funcion que calcula la probabilidad
+def Probabilidad(x,y):
+    for x in range(len(laberinto)):
+        for y in range(len(laberinto)):
+            if estaEnLista(x, y, prob_tres_cuartos) == True:
+                prob = 3/4
+            if estaEnLista(x, y, prob_dos_tercios) == True:
+                prob = 2/3 
+            if estaEnLista(x, y, prob_uno) == True:
+                prob = 1
+            if estaEnLista(x, y, prob_un_medio) == True:
+                prob = 1/2
+            if estaEnLista(x, y, prob_muerte) == True:
+                print("Has muerto.")
+    return prob
 
 posicion_actual = [0,0]
 x = posicion_actual[0]
