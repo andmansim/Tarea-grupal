@@ -42,7 +42,60 @@ def creacionlab():
                                 fila.append(" ")
                 lab.append (fila)
                 fila = []
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for x in range(len(laberinto)):
+        print(laberinto[x]) 
+        posicion_actual = [0,0]
+        x = posicion_actual[0]
+        y = posicion_actual[1]
+        while laberinto[x][y] != "S": 
+                posicion_siguiente = calcular_siguiente(posicion_actual)
+                posicion_actual[0] = posicion_siguiente[0] 
+                posicion_actual[1] = posicion_siguiente[1] 
+                x = posicion_actual[0] 
+                y = posicion_actual[1]
+        print("Felicidades, has ganado.")
+probabilidad_final = sum(solucion)
+print(probabilidad_final)
 creacionlab()
 for x in lab:
     print(" ".join(x))
