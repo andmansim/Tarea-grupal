@@ -43,29 +43,6 @@ lab =[]
                 #lab.append (fila)
                 #fila = []
 
-def arriba(x, y): 
-        if x > 0 and x < 5: 
-                if laberinto[x-1][y] != "X": 
-                        return True
-        return False
-
-def abajo(x, y): 
-        if x >= 0 and x < 4: 
-                if laberinto[x+1][y] != "X":
-                        return True
-        return False 
-
-def derecha(x, y): 
-        if y >= 0 and y < 4: 
-                if laberinto[x][y+1] != "X":
-                        return True
-        return False 
-
-def izquierda(x, y): 
-        if y > 0 and y <= 5: 
-                if laberinto[x][y-1] != "X":
-                        return True
-        return False
 
 def calcular_siguiente(posicion_actual): 
         coordenada = [] 
@@ -94,6 +71,29 @@ def calcular_siguiente(posicion_actual):
                         coordenada.append(y+1) 
         return coordenada
 
+def arriba(x, y): 
+        if x > 0 and x < 5: 
+                if laberinto[x-1][y] != "X": 
+                        return True
+        return False
+
+def abajo(x, y): 
+        if x >= 0 and x < 4: 
+                if laberinto[x+1][y] != "X":
+                        return True
+        return False 
+
+def derecha(x, y): 
+        if y >= 0 and y < 4: 
+                if laberinto[x][y+1] != "X":
+                        return True
+        return False 
+
+def izquierda(x, y): 
+        if y > 0 and y <= 5: 
+                if laberinto[x][y-1] != "X":
+                        return True
+        return False
 
 posicion_actual = [0,0]
 x = posicion_actual[0]
