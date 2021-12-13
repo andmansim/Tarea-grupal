@@ -21,8 +21,8 @@ muro = ((0,1), (0,2), (0,4), (0,5), (1,1), (3,3), (4,3))
 bomba = ((0,3),(2,1),(2,3))
 teletransporte_1 = ((5,1), (5,3))
 teletransporte_2 = ((5,0), (2,4)) 
-inicio = ((0,0))
-salida = ((5,5))
+inicio = ((0,0),)
+salida = ((5,5),)
 
 #listas vacias que se usan en distntas funciones
 solucion = []
@@ -36,26 +36,31 @@ prob_un_medio = [(0,0), (1, 2), (2, 2), (1, 3)]
 prob_muerte = [(2, 1), (0, 3), (2, 3)]
 
 #funcion que crea el laberinto
-#def creacionlab():
-#        fila = []
-#        for i in range(0,6): #line
- #               for j in range(0,6): #column             
-  #                      if tuple([i,j]) in muro:
-   #                             fila.append("X")
-    #                    elif tuple([i,j]) in bomba:
-     #                           fila.append("B")
-      #                  elif tuple([i,j]) in teletransporte_1:
-       #                         fila.append("T1")
-        #                elif tuple([i,j]) in teletransporte_2:
-         #                       fila.append("T2")
-          #              elif tuple([i,j]) in inicio:
-           #                     fila.append("I")
-            #            elif tuple([i,j]) in salida:
-             #                   fila.append("S")
-              #          else:
-               #                 fila.append(" ")
-                #lab.append (fila)
-                #fila = []
+def creacionlab():
+        fila = []
+        for i in range(0,6): #line
+                for j in range(0,6): #column             
+                        if tuple([i,j]) in muro:
+                                fila.append("X")
+                        elif tuple([i,j]) in bomba:
+                                fila.append("B")
+                        elif tuple([i,j]) in teletransporte_1:
+                                fila.append("T1")
+                        elif tuple([i,j]) in teletransporte_2:
+                                fila.append("T2")
+                        elif tuple([i,j]) in inicio:
+                                fila.append("I")
+                        elif tuple([i,j]) in salida:
+                                fila.append("S")
+                        else:
+                                fila.append(" ")
+                lab.append (fila)
+                fila = []
+
+creacionlab()
+for x in lab:
+    print(" ".join(x))
+
 
 #funcion que calcula aleatoriamente el siguiente movimiento de la rana
 def calcular_siguiente(posicion_actual): 
