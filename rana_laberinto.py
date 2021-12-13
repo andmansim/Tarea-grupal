@@ -57,10 +57,6 @@ def creacionlab():
                 lab.append (fila)
                 fila = []
 
-creacionlab()
-for x in lab:
-    print(" ".join(x))
-
 
 #funcion que calcula aleatoriamente el siguiente movimiento de la rana
 def calcular_siguiente(posicion_actual): 
@@ -143,19 +139,19 @@ def estaEnLista(numA, numB, lista):
         return False
 
 #CODIGO PRINCIPAL
-#creacionlab()
-#for x in lab:
-#    print(" ".join(x))
+creacionlab()
+for x in lab:
+    print(" ".join(x))
 posicion_actual = [0,0]
 x = posicion_actual[0]
 y = posicion_actual[1]
 while laberinto[x][y] != "S" or laberinto[x][y] == "B": 
     posicion_siguiente = calcular_siguiente(posicion_actual)
     print(posicion_siguiente)
-    #posicion_actual[0] = posicion_siguiente[0] 
-    #posicion_actual[1] = posicion_siguiente[1] 
-    #x = posicion_actual[0] 
-    #y = posicion_actual[1]
+    posicion_actual[0] = posicion_siguiente[0] 
+    posicion_actual[1] = posicion_siguiente[1] 
+    x = posicion_actual[0] 
+    y = posicion_actual[1]
     x = 5 
     y = 5
 print("Felicidades, has ganado.")
