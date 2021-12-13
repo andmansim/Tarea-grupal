@@ -1,4 +1,7 @@
 import random
+from functools import reduce
+import operator
+
 laberinto = [
     ['I', 'X', 'X', 'B', 'X', 'X'],
     [' ', 'X', ' ', ' ', ' ', ' '],
@@ -7,14 +10,6 @@ laberinto = [
     [' ', ' ', ' ', 'X', ' ', ' '],
     ['T2', 'T1', ' ', 'T1', ' ','S']
     ]
-
-#indicación de que representa cada inicial en el tablero
-inicio = 'I'
-salida = 'S'
-bomba = 'B'
-muro = 'X'
-teletransporte_1 = 'T1'
-teletransporte_2 = 'T2'
 
 #listas con las coordenadas correspondientes, necesarias para imprimir el laberinto
 muro = ((0,1), (0,2), (0,4), (0,5), (1,1), (3,3), (4,3))
@@ -65,29 +60,27 @@ def calcular_siguiente(posicion_actual):
         
         while coordenada == []:
             a = random.randint(1, 4)
-            print("a es " + str(a))
+            prob = Probabilidad(x, y)
             if a == 1:
                     if arriba(x, y) == True:
-                            solucion.append(Probabilidad(x, y)) 
                             coordenada.append(x-1) 
                             coordenada.append(y) 
             elif a == 2:
                     if abajo(x, y) == True: 
-                            solucion.append(Probabilidad(x, y)) 
                             coordenada.append(x+1) 
                             coordenada.append(y) 
             elif a == 3: 
                     if izquierda(x, y) == True: 
-                            solucion.append(Probabilidad(x, y)) 
                             coordenada.append(x) 
                             coordenada.append(y-1) 
             elif a == 4:
                     if derecha(x, y) == True: 
-                            solucion.append(Probabilidad(x, y)) 
                             coordenada.append(x) 
                             coordenada.append(y+1)
+            if prob != 0:
+                solucion.append(prob) 
                     
-        return coordenada
+        return coordenada, prob
 
 #las proximas 4 funciones indican si es posible o mover en la direccion que indican
 def arriba(x, y): 
@@ -116,18 +109,17 @@ def izquierda(x, y):
 
 #funcion que calcula la probabilidad
 def Probabilidad(x,y):
-    for x in range(len(laberinto)):
-        for y in range(len(laberinto)):
-            if estaEnLista(x, y, prob_tres_cuartos) == True:
-                prob = 3/4
-            if estaEnLista(x, y, prob_dos_tercios) == True:
-                prob = 2/3 
-            if estaEnLista(x, y, prob_uno) == True:
-                prob = 1
-            if estaEnLista(x, y, prob_un_medio) == True:
-                prob = 1/2
-            if estaEnLista(x, y, prob_muerte) == True:
-                print("Has muerto.")
+    if estaEnLista(x, y, prob_tres_cuartos) == True:
+        prob = 3/4
+    elif estaEnLista(x, y, prob_dos_tercios) == True:
+        prob = 2/3 
+    elif estaEnLista(x, y, prob_uno) == True:
+        prob = 1
+    elif estaEnLista(x, y, prob_un_medio) == True:
+        prob = 1/2
+    elif estaEnLista(x, y, prob_muerte) == True:
+                prob = 0
+                                                
     return prob
 
 #funcion que indica si una pareja de numeros pertenece a una lista o no, necesaria para la funcion probabilidad
@@ -144,16 +136,19 @@ def estaEnLista(numA, numB, lista):
 posicion_actual = [0,0]
 x = posicion_actual[0]
 y = posicion_actual[1]
-while laberinto[x][y] != "S" or laberinto[x][y] == "B": 
-    posicion_siguiente = calcular_siguiente(posicion_actual)
-    print(posicion_siguiente)
-    #posicion_actual[0] = posicion_siguiente[0] 
-    #posicion_actual[1] = posicion_siguiente[1] 
-    #x = posicion_actual[0] 
-    #y = posicion_actual[1]
-    x = 5 
-    y = 5
-print("Felicidades, has ganado.")
+prob = 10
+while laberinto[x][y] != "S" and prob != 0: 
+    posicion_siguiente, prob = calcular_siguiente(posicion_actual)
+    print("posicion_siguiente " + str(posicion_siguiente))
+    print("prob " + str(prob))
+    posicion_actual[0] = posicion_siguiente[0] 
+    posicion_actual[1] = posicion_siguiente[1] 
+    x = posicion_actual[0] 
+    y = posicion_actual[1]
+    
 probabilidad_final = sum(solucion)
 print(probabilidad_final)
+
+leche = reduce(operator.mul,solucion)
+print ("leche" + str(leche))
 
