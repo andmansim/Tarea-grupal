@@ -31,26 +31,28 @@ prob_un_medio = [(0,0), (1, 2), (2, 2), (1, 3)]
 prob_muerte = [(2, 1), (0, 3), (2, 3)]
 
 #funcion que crea el laberinto
-#def creacionlab():
-#        fila = []
-#        for i in range(0,6): #line
- #               for j in range(0,6): #column             
-  #                      if tuple([i,j]) in muro:
-   #                             fila.append("X")
-    #                    elif tuple([i,j]) in bomba:
-     #                           fila.append("B")
-      #                  elif tuple([i,j]) in teletransporte_1:
-       #                         fila.append("T1")
-        #                elif tuple([i,j]) in teletransporte_2:
-         #                       fila.append("T2")
-          #              elif tuple([i,j]) in inicio:
-           #                     fila.append("I")
-            #            elif tuple([i,j]) in salida:
-             #                   fila.append("S")
-              #          else:
-               #                 fila.append(" ")
-                #lab.append (fila)
-                #fila = []
+def creacionlab():
+        fila = []
+        for i in range(0,6): #line
+                for j in range(0,6): #column             
+                        if tuple([i,j]) in muro:
+                                fila.append("X")
+                        elif tuple([i,j]) in bomba:
+                                fila.append("B")
+                        elif tuple([i,j]) in teletransporte_1:
+                                fila.append("T1")
+                        elif tuple([i,j]) in teletransporte_2:
+                                fila.append("T2")
+                        elif tuple([i,j]) in inicio:
+                                fila.append("I")
+                        elif tuple([i,j]) in salida:
+                                fila.append("S")
+                        else:
+                                fila.append(" ")
+                lab.append (fila)
+                fila = []
+
+
 
 #funcion que calcula aleatoriamente el siguiente movimiento de la rana
 def calcular_siguiente(posicion_actual): 
