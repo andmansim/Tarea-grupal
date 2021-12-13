@@ -62,27 +62,31 @@ def calcular_siguiente(posicion_actual):
         coordenada = [] 
         x = posicion_actual[0] 
         y = posicion_actual[1]
-        a = random.randint(1, 4)
-        if a == 1:
-                if arriba(x, y) == True:
-                        solucion.append(Probabilidad(x, y)) 
-                        coordenada.append(x-1) 
-                        coordenada.append(y) 
-        elif a == 2:
-                if abajo(x, y) == True: 
-                        solucion.append(Probabilidad(x, y)) 
-                        coordenada.append(x+1) 
-                        coordenada.append(y) 
-        elif a == 3: 
-                if izquierda(x, y) == True: 
-                        solucion.append(Probabilidad(x, y)) 
-                        coordenada.append(x) 
-                        coordenada.append(y-1) 
-        elif a == 4:
-                if derecha(x, y) == True: 
-                        solucion.append(Probabilidad(x, y)) 
-                        coordenada.append(x) 
-                        coordenada.append(y+1) 
+        
+        while coordenada == []:
+            a = random.randint(1, 4)
+            print("a es " + str(a))
+            if a == 1:
+                    if arriba(x, y) == True:
+                            solucion.append(Probabilidad(x, y)) 
+                            coordenada.append(x-1) 
+                            coordenada.append(y) 
+            elif a == 2:
+                    if abajo(x, y) == True: 
+                            solucion.append(Probabilidad(x, y)) 
+                            coordenada.append(x+1) 
+                            coordenada.append(y) 
+            elif a == 3: 
+                    if izquierda(x, y) == True: 
+                            solucion.append(Probabilidad(x, y)) 
+                            coordenada.append(x) 
+                            coordenada.append(y-1) 
+            elif a == 4:
+                    if derecha(x, y) == True: 
+                            solucion.append(Probabilidad(x, y)) 
+                            coordenada.append(x) 
+                            coordenada.append(y+1)
+                    
         return coordenada
 
 #las proximas 4 funciones indican si es posible o mover en la direccion que indican
@@ -126,19 +130,30 @@ def Probabilidad(x,y):
                 print("Has muerto.")
     return prob
 
+#funcion que indica si una pareja de numeros pertenece a una lista o no, necesaria para la funcion probabilidad
+def estaEnLista(numA, numB, lista): 
+        for x in range(len(lista)): 
+                if lista[x][0] == numA and lista[x][1] == numB: 
+                        return True 
+        return False
+
+#CODIGO PRINCIPAL
+#creacionlab()
+#for x in lab:
+#    print(" ".join(x))
 posicion_actual = [0,0]
 x = posicion_actual[0]
 y = posicion_actual[1]
-while laberinto[x][y] != "S": 
+while laberinto[x][y] != "S" or laberinto[x][y] == "B": 
     posicion_siguiente = calcular_siguiente(posicion_actual)
-    posicion_actual[0] = posicion_siguiente[0] 
-    posicion_actual[1] = posicion_siguiente[1] 
-    x = posicion_actual[0] 
-    y = posicion_actual[1]
+    print(posicion_siguiente)
+    #posicion_actual[0] = posicion_siguiente[0] 
+    #posicion_actual[1] = posicion_siguiente[1] 
+    #x = posicion_actual[0] 
+    #y = posicion_actual[1]
+    x = 5 
+    y = 5
 print("Felicidades, has ganado.")
 probabilidad_final = sum(solucion)
 print(probabilidad_final)
 
-#creacionlab()
-#for x in lab:
-#    print(" ".join(x))
