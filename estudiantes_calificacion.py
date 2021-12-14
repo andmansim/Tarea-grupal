@@ -33,4 +33,9 @@ for i in range (0,5):
         
 print(suspensos)
 print(aprobados)
-redondear(notas[i], 5)
+for j in range(len(aprobados)):
+    h = aprobados[j]
+    u = redondear(aprobados[j], 5)
+    resta = h - u
+    print(resta)
+
