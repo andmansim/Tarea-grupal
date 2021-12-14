@@ -1,13 +1,22 @@
 import random
+
 notas_totales = []
+
 def calificaciones():
     notas = []
     calificacion = random.randint(0,100)
-    notas.append(str(calificacion))
+    notas.append(calificacion)
     notas_totales.append(notas)
-    for x in notas_totales:
-        print(",".join(x))
-    return notas
-print(calificaciones())
+    
+    return 
+    
+    
+y = 0
+while y < 5:
+
+    d = calificaciones()
+    y = y + 1
+print(notas_totales)
+
 
 
