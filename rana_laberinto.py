@@ -148,9 +148,7 @@ while laberinto[x][y] != "S" and prob != 0:
     x = posicion_actual[0] 
     y = posicion_actual[1]
     
-probabilidad_final = sum(solucion)
-print(probabilidad_final)
 
 leche = reduce(operator.mul,solucion)
-print ("leche" + str(leche))
+print (str(leche))
 
