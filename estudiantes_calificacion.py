@@ -7,8 +7,12 @@ def calificaciones():
     
     calificacion = random.randint(0,100)
     notas.append(calificacion)
- 
     
+ 
+def round_up(num, divisor):
+    a = int((num/divisor + 0.5) * divisor )
+    return a
+
     
 y = 0
 while y < 5:
@@ -24,6 +28,7 @@ for i in range (0,5):
     if notas[i] < 40:
         suspensos.append(notas[i])
     else:
+        if notas
         print("b")
 print(suspensos)
 
