@@ -38,19 +38,8 @@ for i in range (0,5):
 print(suspensos)
 print(aprobados)
 
-
-def resta(h,u):
-   restas = h - u
-   
-   return restas
-
-for j in aprobados:
-    b = redondear(aprobados[j],5)
-    resta(aprobados[j], b)
-    print(resta)
-
-'''contador = 0
-while contador != 6 or aprobados == []:
-    print(myround(aprobados[0],5))
+contador = 0
+while contador != 6 or aprobados != []:
+    print(redondear(aprobados[0],5))
     aprobados.pop(0)
-    contador = contador + 1'''
+    contador = contador + 1
