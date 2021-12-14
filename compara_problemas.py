@@ -10,6 +10,10 @@ b = [claridadB, originalidadB, dificultadB]
 Lucia = []
 Carlos = []
 
+#funcion para sumar las puntuaciones
+def suma_puntuacion(lista):
+    lista.append(1)
+
 
 #codigo principal
 if a[0] > b[0]:
