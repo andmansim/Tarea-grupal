@@ -24,11 +24,13 @@ print(notas)
 notas.sort()
 print(notas)
 suspensos = []
+aprobados = []
 for i in range (0,5):
     if notas[i] < 40:
         suspensos.append(notas[i])
     else:
-        if notas
-        print("b")
+        aprobados.append(notas[i])
+        
 print(suspensos)
+print(aprobados)
 redondear(notas[i], 5)
