@@ -31,23 +31,25 @@ print("Posición de una naranja:")
 print(posicion_naranja)
 
 def manzana ():
-    if posicion_manzana < 5:
-        distancia_manzana = a - posicion_manzana
-    elif posicion_manzana > 5:
+    if posicion_manzana != 5:
         distancia_manzana = posicion_manzana - a
     else:
         distancia_manzana = 0
     return distancia_manzana
 
 def naranja ():
-    if posicion_naranja < 15:
-        distancia_naranja = b - posicion_naranja
-    elif posicion_naranja > 15:
+    if posicion_naranja != 15:
         distancia_naranja = posicion_naranja - b
     else:
         distancia_naranja = 0
     return distancia_naranja
 
+m = manzana()
+manzanas_lista.append(m)
+print(manzanas_lista)
+n = naranja()
+naranjas_lista.append(n)
+print(naranjas_lista)
 
 #objetivo: print(numero de manzanas que caen dentro de la casa)
          # print(numero de naranjas que caen dentro de la casa)
