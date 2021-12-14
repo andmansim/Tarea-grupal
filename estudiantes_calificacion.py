@@ -9,7 +9,7 @@ def calificaciones():
     notas.append(calificacion)
     
  
-def round_up(num, divisor):
+def redondear(num, divisor):
     a = int((num/divisor + 0.5) * divisor )
     return a
 
