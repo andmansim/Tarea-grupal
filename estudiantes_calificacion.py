@@ -8,7 +8,7 @@ def calificaciones():
     calificacion = random.randint(0,100)
     notas.append(calificacion)
     
- 
+# Para conseguir un múltiplo de 5 mayor que la nota
 def redondear(num, divisor):
     a = int((num/divisor + 0.5) * divisor )
     return a
@@ -31,4 +31,4 @@ for i in range (0,5):
         if notas
         print("b")
 print(suspensos)
-
+redondear(notas[i], 5)
