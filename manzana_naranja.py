@@ -50,6 +50,12 @@ print(manzanas_lista)
 n = naranja()
 naranjas_lista.append(n)
 print(naranjas_lista)
+total_manzanas = 0
+if 7 < posicion_manzana < 11:
+    total_manzanas = total_manzanas + 1
+    print(total_manzanas)
 
-#objetivo: print(numero de manzanas que caen dentro de la casa)
-         # print(numero de naranjas que caen dentro de la casa)
+total_naranjas = 0
+if 7 < posicion_naranja < 11:
+    total_naranjas = total_naranjas + 1  
+    print(total_naranjas)
