@@ -37,7 +37,9 @@ def naranja (posicion_naranja):
         distancia_naranja = 0
     return distancia_naranja
 
-contador = 10
+total_manzanas = 0
+total_naranjas = 0
+contador = 3
 while contador != 0:
     posicion_m = lanzamiento_manzana()
     print("Posición de las manzanas")
@@ -52,19 +54,29 @@ while contador != 0:
     print(manzanas_lista)
     n = naranja(posicion_n)
     naranjas_lista.append(n)
-    print("Lista de las manzanas")
+    print("Lista de las naranjas")
     print(naranjas_lista)
     
-    total_manzanas = 0
-    if 7 < posicion_m < 11:
+    
+    if 7 <= posicion_m <= 11:
         total_manzanas = total_manzanas + 1
         print("Manzanas en la casa")
         print(total_manzanas)
+    
 
-    total_naranjas = 0
-    if 7 < posicion_n < 11:
+    
+    if 7 <= posicion_n <= 11:
         total_naranjas = total_naranjas + 1  
-        print("Manzanas en la casa")
+        print("Naranjas en la casa")
         print(total_naranjas)
+   
     
     contador = contador - 1
+
+
+print("Número total de manzanas en la casa")
+total_m = total_manzanas
+print(total_m)
+print("Número total de naranjas en la casa")
+total_n = total_naranjas
+print(total_n)
