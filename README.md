@@ -7,7 +7,7 @@ En este proyecto grupal hay varias tareas:
 
 El diagrama de flujo de este este es el siguiente:
 
-![diagrama de flujo comparar los problemas](Comparar problemas.jpg)
+![diagrama de flujo comparar los problemas](Comparar_problemas.jpg)
 
 
 EL codigo de este ejercicio es el siguiente:
@@ -65,7 +65,7 @@ print(puntuacion_final)
 
 El diagrama de flujo de este ejercicio es el siguiente:
 
-![diagrama de flujo estudiantes de calificación](Estudiantes_de_calificación.jpg)
+![diagrama de flujo estudiantes de calificación](Estudiantes_de_calificacion.jpg)
 
 
 El codigo de este ejercicio es el siguiente:
