@@ -147,7 +147,7 @@ while laberinto[x][y] != "S" and prob != 0:
         posicion_actual[1] = posicion_siguiente[1] 
         x = posicion_actual[0] 
         y = posicion_actual[1]
-        if estaEnLista(posicion_actual[x], posicion_actual[y], teletransporte_1) == True:
+        if estaEnLista(x, y, teletransporte_1) == True:
                 if posicion_actual[0] == 5 and posicion_actual[1] == 1:
                         posicion_actual[0] = 5
                         posicion_actual[1] = 3
@@ -155,7 +155,7 @@ while laberinto[x][y] != "S" and prob != 0:
                         posicion_actual[0] = 5
                         posicion_actual[1] = 1
 
-        elif estaEnLista(posicion_actual[x], posicion_actual[y], teletransporte_2) == True:
+        elif estaEnLista(x, y, teletransporte_2) == True:
                 if posicion_actual[0] == 5 and posicion_actual[1] == 0:
                         posicion_actual[0] = 2
                         posicion_actual[1] = 4
