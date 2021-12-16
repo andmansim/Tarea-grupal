@@ -7,7 +7,8 @@ En este proyecto grupal hay varias tareas:
 
 El diagrama de flujo de este este es el siguiente:
 
-![Diagrama de flujo de la tarea comparar problemas](Comparar_problemas.jpg)
+![diagrama de flujo comparar los problemas](Comparar_problemas.jpg)
+
 
 EL codigo de este ejercicio es el siguiente:
 ```import random
@@ -64,7 +65,8 @@ print(puntuacion_final)
 
 El diagrama de flujo de este ejercicio es el siguiente:
 
-#INSERTE IMAGEN
+![diagrama de flujo estudiantes de calificación](Estudiantes_de_calificación.jpg)
+
 
 El codigo de este ejercicio es el siguiente:
 ```import random
@@ -117,7 +119,8 @@ for i in range(len(suspensos)):
 
 El diagrama de flujo de este ejercicio es el siguiente:
 
-#INSERTE IMAGEN
+![diagrama de flujo juego de piedras](Juego_de_piedras.jpg)
+
 
 El codigo del ejercicio:
 ```"""
@@ -173,10 +176,6 @@ while piedras > 0:
 
 4) La escalera: El objetivo de este ejercicio es crear una escalera, de manera que el primer escalon es un '#', y en cada escalon se suma uno, hasta m veces (donde m es un numero aleatorio)
 
-El diagrama de flujo de este ejercicio es el siguiente:
-
-#INSERTE IMAGEN
-
 El codigo del ejercicio:
 ```"""
 lo que hay que conseguir:
@@ -198,7 +197,8 @@ for b in range(0,m+1):
 
 El diagrama de flujo de este ejercicio es el siguiente:
 
-#INSERTE IMAGEN
+![diagrama de flujo manzana y naranja](La_manzana_y_la_naranja.jpg)
+
 
 El codigo es el siguiente:
 ```
@@ -464,10 +464,6 @@ print (str(leche))
 ```
 
 7) Suma simple de una matriz: Dada una matriz de elementos aleatorios, en este ejercicio tenemos que devolver la suma de todos los elementos de esta matriz
-
-El diagrama de flujo de este ejercicio es el siguiente:
-
-#INSERTE IMAGEN
 
 EL codigo es el siguiente:
 ```import random
