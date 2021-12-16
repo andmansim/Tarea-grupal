@@ -4,7 +4,6 @@ notas = []
 mulriplos_5 = [45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
 
 def calificaciones():
-    
     calificacion = random.randint(0,100)
     notas.append(calificacion)
     
@@ -37,9 +36,9 @@ for i in range (0,5):
     
 print(suspensos)
 print(aprobados)
+ 
+for i in range(len(aprobados)):
+    print("Alumno " + str(i) + " ha sacado " + str(redondear(aprobados[i], 5)))
 
-contador = 0
-while contador != 6 or aprobados != []:
-    print(redondear(aprobados[0],5))
-    aprobados.pop(0)
-    contador = contador + 1
+for i in range(len(suspensos)):
+    print("Alumno " + str(i) + " ha suspendido con " + str(suspensos[i]))
