@@ -193,7 +193,8 @@ while laberinto[x][y] != "S" and prob != 0:
     
 
 leche = reduce(operator.mul,solucion)
-print (str(leche))```
+print (str(leche))
+```
 
 7) Suma simple de una matriz: Dada una matriz de elementos aleatorios, en este ejercicio tenemos que devolver la suma de todos los elementos de esta matriz
 El diagrama de flujo de este ejercicio es el siguiente:
