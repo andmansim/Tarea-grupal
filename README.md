@@ -20,6 +20,7 @@ El diagrama de flujo de este ejercicio es el siguiente:
 
 6) Rana en laberinto: En este ejercicio tenemos que determinar la probrabilidad que tiene la rana Gustavo en salir del laberinto. Los obtaculos que tiene son teletrasnsportes, muros y bombas. Asimismo, hemos impreso el laberinto.
 El diagrama de flujo de este ejercicio es el siguiente:
+
 ![diagrama de flujo rana en el laberinto](Diagrama Gustavo.JPG)
 
 7) Suma simple de una matriz: Dada una matriz de elementos aleatorios, en este ejercicio tenemos que devolver la suma de todos los elementos de esta matriz
