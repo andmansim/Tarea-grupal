@@ -1,4 +1,4 @@
-# Tarea-
+# Tarea-grupal
 Nuestra dirección de GitHub para este repositorio es la siquiente: [GitHub](https://github.com/andmansim/Tarea-grupal)
 https://github.com/andmansim/Tarea-grupal
 
@@ -61,16 +61,229 @@ print(puntuacion_final)
 ```
 
 2) Estudiantes de calificacion: en este ejercicio, tenemos que redondear o no las calificaciones de unos estudiantes. El redondeo dependerá de ciertos criterios (si es menos de cuarenta no se redondea porque es suspenso; si el multiplo de 5 mas cercano a su nota esta mas lejos que de tres numeros, no se redondea; en otra situacion, si)
+
 El diagrama de flujo de este ejercicio es el siguiente:
+
+#INSERTE IMAGEN
+
+El codigo de este ejercicio es el siguiente:
+```import random
+
+notas = []
+mulriplos_5 = [45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+
+def calificaciones():
+    calificacion = random.randint(0,100)
+    notas.append(calificacion)
+    
+# Para conseguir un múltiplo de 5 mayor que la nota
+def redondear(x, base):
+    a = base * round(x/base)
+    if a < x:
+        a = a + 5
+    return a
+
+
+    
+y = 0
+while y < 5:
+
+    d = calificaciones()
+    y = y + 1
+print("Notas iniciales")
+print(notas)
+notas.sort()
+print(notas)
+suspensos = []
+aprobados = []
+
+for i in range (0,5):
+    if notas[i] < 40:
+        suspensos.append(notas[i])
+    else:
+        aprobados.append(notas[i])
+    
+print(suspensos)
+print(aprobados)
+ 
+for i in range(len(aprobados)):
+    print("Alumno " + str(i) + " ha sacado " + str(redondear(aprobados[i], 5)))
+
+for i in range(len(suspensos)):
+    print("Alumno " + str(i) + " ha suspendido con " + str(suspensos[i]))
+    ```
 
 3) Juego de piedras: En este juego, cada jugador tiene n piedras, y el objetivo es quitar las piedras del contrario. En cada turno pueden quitar 1, 3 o 5 piedras. Perderá quien no pueda mover.
+
 El diagrama de flujo de este ejercicio es el siguiente:
+
+#INSERTE IMAGEN
+
+El codigo del ejercicio:
+```"""
+Reglas:
+Tenemos n piedras y hay dosjugadores los cuales deberán intentar quitar todas las piedras para poder ganar.
+Movimientos:
+-quitar tres piedraa
+-quitar dos piedras
+-quitar cinco piedras
+Siempre empezará el jugador uno.
+  
+"""
+import random
+piedras = 1
+print(piedras)
+print ("Empieza jugando el jugardo 1")
+def repartir(p):
+    if p >= 5:
+        jugador = 5
+        
+    elif p < 5 and p >= 3:
+        jugador = 3
+        
+    elif p == 2: 
+        jugador = 2
+        
+    else:
+        jugador = p
+    return jugador
+
+while piedras > 0:
+    print("Piedras del jugador 1:")
+    jugador1 = repartir(piedras) 
+    print(jugador1)
+    piedras = piedras - jugador1
+    if jugador1 < 2:
+        print("Jugador 1 pierde")
+        break
+    elif piedras == 0:
+        print("Jugador 2 pierde")
+        break
+    print("Piedras del jugador 2")
+    jugador2 = repartir(piedras)
+    piedras = piedras - jugador2
+    print(jugador2)
+    if jugador2 < 2:
+        print("Jugador 2 pierde")
+        break
+    elif piedras == 0:
+        print("Jugador 1 pierde")
+        break
+```
 
 4) La escalera: El objetivo de este ejercicio es crear una escalera, de manera que el primer escalon es un '#', y en cada escalon se suma uno, hasta m veces (donde m es un numero aleatorio)
+
 El diagrama de flujo de este ejercicio es el siguiente:
 
+#INSERTE IMAGEN
+
+El codigo del ejercicio:
+```"""
+lo que hay que conseguir:
+#
+##
+###
+####
+#####
+... hasta m
+"""
+import random
+m = random.randint(1,10)
+for b in range(0,m+1):
+    producto ='#' * b
+    print(producto)
+```
+
 5) Manzana y naranja: El objetivo de este ejercicio es determinar cuantas manzanas y naranjas caen encima de la casa de Sam, donde el manzano y el naranjo estam a una cierta distancia de la casa. La distancia que pueden recorrer las manzanas y las naranjas es aleatoria, y si es negativa, es que han caido por detras de los arboles, es decir, en direccion contraria a la casa.
+
 El diagrama de flujo de este ejercicio es el siguiente:
+
+#INSERTE IMAGEN
+
+El codigo es el siguiente:
+```
+# distancia casa: s y t
+# manzano: a
+#naranjo: b
+import random
+s = (7)
+t = (11)
+b = (15)
+a = (5)
+distancia_casa = [s,t]
+distancia_arboles = [a,b]
+manzanas_lista = []
+naranjas_lista = []
+
+def lanzamiento_manzana():
+    j = random.randint(0,11)
+    return j
+
+def lanzamiento_naranja():
+    h = random.randint(7,20)
+    return h
+
+
+
+
+def manzana (posicion_manzana):
+    if posicion_manzana != 5:
+        distancia_manzana = posicion_manzana - a
+    else:
+        distancia_manzana = 0
+    return distancia_manzana
+
+def naranja (posicion_naranja):
+    if posicion_naranja != 15:
+        distancia_naranja = posicion_naranja - b
+    else:
+        distancia_naranja = 0
+    return distancia_naranja
+
+total_manzanas = 0
+total_naranjas = 0
+contador = 3
+while contador != 0:
+    posicion_m = lanzamiento_manzana()
+    print("Posición de las manzanas")
+    print(posicion_m)
+    posicion_n = lanzamiento_naranja()
+    print("Posición de las naranjas")
+    print(posicion_n)
+    
+    m = manzana(posicion_m)
+    manzanas_lista.append(m)
+    print("Lista de las manzanas")
+    print(manzanas_lista)
+    n = naranja(posicion_n)
+    naranjas_lista.append(n)
+    print("Lista de las naranjas")
+    print(naranjas_lista)
+    
+    
+    if 7 <= posicion_m <= 11:
+        total_manzanas = total_manzanas + 1
+        print("Manzanas en la casa")
+        print(total_manzanas)
+    
+
+    
+    if 7 <= posicion_n <= 11:
+        total_naranjas = total_naranjas + 1  
+        print("Naranjas en la casa")
+        print(total_naranjas)
+   
+    
+    contador = contador - 1
+
+
+print("Número total de manzanas en la casa")
+total_m = total_manzanas
+print(total_m)
+print("Número total de naranjas en la casa")
+total_n = total_naranjas
+print(total_n)
+´´´
 
 6) Rana en laberinto: En este ejercicio tenemos que determinar la probrabilidad que tiene la rana Gustavo en salir del laberinto. Los obtaculos que tiene son teletrasnsportes, muros y bombas. Asimismo, hemos impreso el laberinto.
 
@@ -251,5 +464,35 @@ print (str(leche))
 ```
 
 7) Suma simple de una matriz: Dada una matriz de elementos aleatorios, en este ejercicio tenemos que devolver la suma de todos los elementos de esta matriz
+
 El diagrama de flujo de este ejercicio es el siguiente:
-   
+
+#INSERTE IMAGEN
+
+EL codigo es el siguiente:
+```import random
+  
+matriz =[]
+
+def creacionmatriz(n,m):
+        fila = []
+        h = 0
+        for i in range(n,m): #linea
+            for j in range(n,m): #columna
+                
+                a = random.randint(0,100)
+                fila.append(a)
+                h = h + a 
+            matriz.append (fila)
+            fila = []
+            
+        return(h)
+suma = creacionmatriz(0,3)  # Dimensiones de la matriz y donde nos añade el valor final
+
+# Para unir las listas que forma a la principal
+
+for x in matriz:
+    print(" ".join(str(x)))
+
+print(suma)
+```
