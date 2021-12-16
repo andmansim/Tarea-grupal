@@ -111,7 +111,7 @@ for i in range(len(aprobados)):
 
 for i in range(len(suspensos)):
     print("Alumno " + str(i) + " ha suspendido con " + str(suspensos[i]))
-    ```
+```
 
 3) Juego de piedras: En este juego, cada jugador tiene n piedras, y el objetivo es quitar las piedras del contrario. En cada turno pueden quitar 1, 3 o 5 piedras. Perderá quien no pueda mover.
 
