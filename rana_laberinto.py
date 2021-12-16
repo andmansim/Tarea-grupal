@@ -140,13 +140,28 @@ x = posicion_actual[0]
 y = posicion_actual[1]
 prob = 10
 while laberinto[x][y] != "S" and prob != 0: 
-    posicion_siguiente, prob = calcular_siguiente(posicion_actual)
-    print("posicion_siguiente " + str(posicion_siguiente))
-    print("prob " + str(prob))
-    posicion_actual[0] = posicion_siguiente[0] 
-    posicion_actual[1] = posicion_siguiente[1] 
-    x = posicion_actual[0] 
-    y = posicion_actual[1]
+        posicion_siguiente, prob = calcular_siguiente(posicion_actual)
+        print("posicion_siguiente " + str(posicion_siguiente))
+        print("prob " + str(prob))
+        posicion_actual[0] = posicion_siguiente[0] 
+        posicion_actual[1] = posicion_siguiente[1] 
+        x = posicion_actual[0] 
+        y = posicion_actual[1]
+        if estaEnLista(posicion_actual[x], posicion_actual[y], teletransporte_1) == True:
+                if posicion_actual[0] == 5 and posicion_actual[1] == 1:
+                        posicion_actual[0] = 5
+                        posicion_actual[1] = 3
+                if posicion_actual[0] == 5 and posicion_actual[1] == 3:
+                        posicion_actual[0] = 5
+                        posicion_actual[1] = 1
+
+        elif estaEnLista(posicion_actual[x], posicion_actual[y], teletransporte_2) == True:
+                if posicion_actual[0] == 5 and posicion_actual[1] == 0:
+                        posicion_actual[0] = 2
+                        posicion_actual[1] = 4
+                if posicion_actual[0] == 2 and posicion_actual[1] == 4:
+                        posicion_actual[0] = 5
+                        posicion_actual[1] = 0
     
 
 leche = reduce(operator.mul,solucion)
