@@ -283,6 +283,7 @@ print(total_m)
 print("Número total de naranjas en la casa")
 total_n = total_naranjas
 print(total_n)
+
 ´´´
 
 6) Rana en laberinto: En este ejercicio tenemos que determinar la probrabilidad que tiene la rana Gustavo en salir del laberinto. Los obtaculos que tiene son teletrasnsportes, muros y bombas. Asimismo, hemos impreso el laberinto.
